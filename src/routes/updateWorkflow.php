@@ -40,7 +40,7 @@ $app->post('/api/HelpDesk/updateWorkflow', function ($request, $response) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
             if(empty($result['contextWrites']['to'])) {
-                $result['contextWrites']['to']['status_msg'] = "Api return no results";
+                $result['contextWrites']['to']['status_msg'] = "Workflow successfully updated!";
             }
         } else {
             $result['callback'] = 'error';

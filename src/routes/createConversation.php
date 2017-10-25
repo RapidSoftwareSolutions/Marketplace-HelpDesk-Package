@@ -32,6 +32,7 @@ $app->post('/api/HelpDesk/createConversation', function ($request, $response) {
     $requestParams['headers'] = [];
     $requestParams["auth"] = [$data['apiKey'],'X'];
 
+
     try {
         $resp = $client->post($query_str, $requestParams);
         $responseBody = $resp->getBody()->getContents();
@@ -40,7 +41,7 @@ $app->post('/api/HelpDesk/createConversation', function ($request, $response) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
             if(empty($result['contextWrites']['to'])) {
-                $result['contextWrites']['to']['status_msg'] = "Api return no results";
+                $result['contextWrites']['to']['status_msg'] = "Conversation successfully created!";
             }
         } else {
             $result['callback'] = 'error';

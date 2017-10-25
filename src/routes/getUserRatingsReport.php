@@ -21,10 +21,10 @@ $app->post('/api/HelpDesk/getUserRatingsReport', function ($request, $response) 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
     
-    $data['start'] = \Models\Params::toFormat($data['start'], 'Y-m-d H:i:s'); 
-    $data['end'] = \Models\Params::toFormat($data['end'], 'Y-m-d H:i:s'); 
-    $data['previousStart'] = \Models\Params::toFormat($data['previousStart'], 'Y-m-d H:i:s'); 
-    $data['previousEnd'] = \Models\Params::toFormat($data['previousEnd'], 'Y-m-d H:i:s'); 
+    $data['start'] = \Models\Params::toFormat($data['start'], 'Y-m-d\TH:i:s\Z');
+    $data['end'] = \Models\Params::toFormat($data['end'], 'Y-m-d\TH:i:s\Z');
+    $data['previousStart'] = \Models\Params::toFormat($data['previousStart'], 'Y-m-d\TH:i:s\Z');
+    $data['previousEnd'] = \Models\Params::toFormat($data['previousEnd'], 'Y-m-d\TH:i:s\Z');
     $data['mailboxes'] = \Models\Params::toString($data['mailboxes'], ','); 
     $data['tags'] = \Models\Params::toString($data['tags'], ','); 
     $data['types'] = \Models\Params::toString($data['types'], ','); 

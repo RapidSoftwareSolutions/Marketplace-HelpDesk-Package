@@ -21,7 +21,7 @@ $app->post('/api/HelpDesk/getCustomerMailboxConversations', function ($request, 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
     
-    $data['modifiedSince'] = \Models\Params::toFormat($data['modifiedSince'], 'Y-m-dTH:i:s'); 
+    $data['modifiedSince'] = \Models\Params::toFormat($data['modifiedSince'], 'Y-m-d\TH:i:s\Z');
     $data['tag'] = \Models\Params::toString($data['tag'], ','); 
 
     $client = $this->httpClient;

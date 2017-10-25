@@ -4,7 +4,7 @@ $app->post('/api/HelpDesk/getFieldDrillDownReport', function ($request, $respons
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey','start','end']);
+    $validateRes = $checkRequest->validate($request, ['apiKey','start','end','field','fieldId']);
 
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
@@ -12,19 +12,19 @@ $app->post('/api/HelpDesk/getFieldDrillDownReport', function ($request, $respons
         $post_data = $validateRes;
     }
 
-    $requiredParams = ['apiKey'=>'apiKey','start'=>'start','end'=>'end'];
+    $requiredParams = ['apiKey'=>'apiKey','start'=>'start','end'=>'end','fieldId'=>'fieldid','field'=>'field'];
     $optionalParams = ['previousStart'=>'previousStart','previousEnd'=>'previousEnd','mailboxes'=>'mailboxes','tags'=>'tags','folders'=>'folders','rows'=>'rows'];
     $bodyParams = [
-       'query' => ['start','end','previousStart','previousEnd','mailboxes','tags','types','folders','rows']
+       'query' => ['start','end','previousStart','previousEnd','mailboxes','tags','types','folders','rows','field','fieldid']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
     
-    $data['start'] = \Models\Params::toFormat($data['start'], 'Y-m-d H:i:s'); 
-    $data['end'] = \Models\Params::toFormat($data['end'], 'Y-m-d H:i:s'); 
-    $data['previousStart'] = \Models\Params::toFormat($data['previousStart'], 'Y-m-d H:i:s'); 
-    $data['previousEnd'] = \Models\Params::toFormat($data['previousEnd'], 'Y-m-d H:i:s'); 
+    $data['start'] = \Models\Params::toFormat($data['start'], 'Y-m-d\TH:i:s\Z');
+    $data['end'] = \Models\Params::toFormat($data['end'], 'Y-m-d\TH:i:s\Z');
+    $data['previousStart'] = \Models\Params::toFormat($data['previousStart'], 'Y-m-d\TH:i:s\Z');
+    $data['previousEnd'] = \Models\Params::toFormat($data['previousEnd'], 'Y-m-d\TH:i:s\Z');
     $data['mailboxes'] = \Models\Params::toString($data['mailboxes'], ','); 
     $data['tags'] = \Models\Params::toString($data['tags'], ','); 
     $data['folders'] = \Models\Params::toString($data['folders'], ','); 

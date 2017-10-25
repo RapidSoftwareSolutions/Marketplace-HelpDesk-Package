@@ -47,7 +47,7 @@ $routes = [
     'getUserReport',
     'getUserConversationHistoryReport',
     'getUserCustomersHelpedReport',
-    'getUserUserDrillDownReport',
+    'getUserDrillDownReport',
     'getUserRepliesReport',
     'getUserResolutionsReport',
     'getUserHappinessReport',

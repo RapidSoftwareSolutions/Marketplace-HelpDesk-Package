@@ -39,7 +39,7 @@ $app->post('/api/HelpDesk/createWebhook', function ($request, $response) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
             if(empty($result['contextWrites']['to'])) {
-                $result['contextWrites']['to']['status_msg'] = "Api return no results";
+                $result['contextWrites']['to']['status_msg'] = "Webhook successfully created!";
             }
         } else {
             $result['callback'] = 'error';

@@ -22,7 +22,7 @@ $app->post('/api/HelpDesk/getThreadSource', function ($request, $response) {
     
 
     $client = $this->httpClient;
-    $query_str = "https://api.helpscout.net/v1/conversations/{$data['conversationId']}/threads/{$data['threadId']}.json";
+    $query_str = "https://api.helpscout.net/v1/conversations/{$data['conversationId']}/thread-source/{$data['threadId']}.json";
 
     
 

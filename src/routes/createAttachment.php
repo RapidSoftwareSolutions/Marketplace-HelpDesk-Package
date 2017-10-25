@@ -12,9 +12,10 @@ $app->post('/api/HelpDesk/createAttachment', function ($request, $response) {
         $post_data = $validateRes;
     }
 
-    $requiredParams = ['apiKey'=>'apiKey','filename'=>'filename','file'=>'file'];
+    $requiredParams = ['apiKey'=>'apiKey','filename'=>'fileName','file'=>'file'];
     $optionalParams = [];
     $bodyParams = [
+        'json' => ['fileName','mimeType','data']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
@@ -24,7 +25,16 @@ $app->post('/api/HelpDesk/createAttachment', function ($request, $response) {
     $client = $this->httpClient;
     $query_str = "https://api.helpscout.net/v1/attachments.json";
 
-    
+    /*
+     * get MIME type
+     */
+
+    $fileContent = file_get_contents($data['file']);
+    $file_info = new finfo(FILEINFO_MIME_TYPE);
+    $mime_type = $file_info->buffer($fileContent);
+
+    $data['mimeType'] = $mime_type;
+    $data['data'] = base64_encode($fileContent);
 
     $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
     $requestParams['headers'] = [];

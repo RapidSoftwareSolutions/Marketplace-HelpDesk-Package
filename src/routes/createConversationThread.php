@@ -24,7 +24,7 @@ $app->post('/api/HelpDesk/createConversationThread', function ($request, $respon
     
 
     $client = $this->httpClient;
-    $query_str = "https://api.helpscout.net/v1/conversations/{$data['id']}.json";
+    $query_str = "https://api.helpscout.net/v1/conversations/{$data['conversationId']}.json";
 
     
 
@@ -40,7 +40,7 @@ $app->post('/api/HelpDesk/createConversationThread', function ($request, $respon
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
             if(empty($result['contextWrites']['to'])) {
-                $result['contextWrites']['to']['status_msg'] = "Api return no results";
+                $result['contextWrites']['to']['status_msg'] = "Conversation thread successfully created!";
             }
         } else {
             $result['callback'] = 'error';
