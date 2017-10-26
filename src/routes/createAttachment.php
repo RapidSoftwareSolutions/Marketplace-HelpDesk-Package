@@ -4,7 +4,7 @@ $app->post('/api/HelpDesk/createAttachment', function ($request, $response) {
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey','filename','file']);
+    $validateRes = $checkRequest->validate($request, ['apiKey','id','filename','file']);
 
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
@@ -12,10 +12,10 @@ $app->post('/api/HelpDesk/createAttachment', function ($request, $response) {
         $post_data = $validateRes;
     }
 
-    $requiredParams = ['apiKey'=>'apiKey','filename'=>'fileName','file'=>'file'];
+    $requiredParams = ['apiKey'=>'apiKey','id'=>'id','filename'=>'fileName','file'=>'file'];
     $optionalParams = [];
     $bodyParams = [
-        'json' => ['fileName','mimeType','data']
+        'json' => ['id','fileName','mimeType','data']
     ];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
