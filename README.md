@@ -186,7 +186,7 @@ Delete attachment
 | attachmentId| String     | Unique attachment id.
 
 ## HelpDesk.getCustomersList
-Return conversations in a mailbox.
+Return list of mailbox customers. Customers can be filtered on any combination of first name, last name, email, and modifiedSince.
 
 | Field        | Type       | Description
 |--------------|------------|----------
@@ -207,7 +207,7 @@ Returns a list of Customers with conversations associated with the specified mai
 | page     | Number     | Page number
 
 ## HelpDesk.getSingleCustomer
-Returns a list of Customers with conversations associated with the specified mailbox.
+Returns a single customer object.
 
 | Field     | Type       | Description
 |-----------|------------|----------

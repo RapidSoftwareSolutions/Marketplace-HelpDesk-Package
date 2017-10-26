@@ -985,7 +985,7 @@
     },
     {
       "name": "getCustomersList",
-      "description": "Return conversations in a mailbox.",
+      "description": "Return list of mailbox customers. Customers can be filtered on any combination of first name, last name, email, and modifiedSince.",
       "args": [
         {
           "name": "apiKey",
@@ -1110,7 +1110,7 @@
     },
     {
       "name": "getSingleCustomer",
-      "description": "Returns a list of Customers with conversations associated with the specified mailbox.",
+      "description": "Returns a single customer object",
       "args": [
         {
           "name": "apiKey",
