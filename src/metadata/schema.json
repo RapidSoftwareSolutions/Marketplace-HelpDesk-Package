@@ -916,12 +916,6 @@
           "required": true
         },
         {
-          "name": "id",
-          "type": "String",
-          "info": "Unique attachment id",
-          "required": true
-        },
-        {
           "name": "filename",
           "type": "String",
           "info": "Filename with extension",
