@@ -539,16 +539,6 @@
           ],
           "info": "Set this request parameter to true to return the created conversation in the response.",
           "required": false
-        },
-        {
-          "name": "type",
-          "type": "Select",
-          "options": [
-            "email",
-            "false"
-          ],
-          "info": "Set this request parameter to true to return the created conversation in the response.",
-          "required": false
         }
       ],
       "vendorRequest": {

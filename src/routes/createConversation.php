@@ -13,7 +13,7 @@ $app->post('/api/HelpDesk/createConversation', function ($request, $response) {
     }
 
     $requiredParams = ['apiKey'=>'apiKey','conversation'=>'conversation'];
-    $optionalParams = ['imported'=>'imported','autoReply'=>'autoReply','reload'=>'reload','type'=>'type'];
+    $optionalParams = ['imported'=>'imported','autoReply'=>'autoReply','reload'=>'reload'];
     $bodyParams = [
        'json:body' => ['conversation'],
        'query' => ['imported','autoReply','reload']

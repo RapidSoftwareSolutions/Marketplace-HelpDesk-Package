@@ -110,7 +110,6 @@ Create conversation object
 | conversation| JSON       | The body of the request. [Read more](https://developer.helpscout.com/help-desk-api/objects/conversation/)
 | autoReply   | Select     | The 'autoReply' request parameter enables auto replies to be sent when a conversation is created via the API. When 'autoReply' is set to true, an auto reply will be sent as long as there is at least one 'customer' thread in the conversation.
 | reload      | Select     | Set this request parameter to true to return the created conversation in the response.
-| type        | Select     | Set this request parameter to true to return the created conversation in the response.
 
 ## HelpDesk.updateConversation
 Update conversation object
