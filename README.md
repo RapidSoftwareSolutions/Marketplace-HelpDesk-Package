@@ -633,7 +633,7 @@ The conversation history report provides details about a user's conversations fo
 | officeHours  | Select     | Whether to take office hours into consideration in the report (defaults to 0); office hours must be enabled if 1 is passed, otherwise the default of 0 will be used
 | user         | String     | User or team identifier for this report
 | page         | Number     | The page number
-| sortField    | Select     | Field which to sort results by. Must be: number, modifiedAt, rating
+| sortField    | Select     | Field which to sort results by. Must be: number, repliesSent, responseTime, resolveTime
 | sortOrder    | Select     | Must be: ASC, DESC
 
 ## HelpDesk.getUserCustomersHelpedReport
@@ -725,7 +725,7 @@ The user ratings report provides a user's ratings for over a specified time rang
 | sortOrder    | Select     | Must be: ASC, DESC
 
 ## HelpDesk.searchConversations
-The user ratings report provides a user's ratings for over a specified time range.
+Search conversations.
 
 | Field    | Type       | Description
 |----------|------------|----------
@@ -733,7 +733,7 @@ The user ratings report provides a user's ratings for over a specified time rang
 | page     | Number     | The page number
 | pageSize | Number     | 50 is the default and also the maximum page size
 | query    | String     | If no query is specified, all conversations will be returned. Example: (subject:'Learning')
-| sortField| Select     | Field which to sort results by. Must be: number, modifiedAt, rating
+| sortField| Select     | Field which to sort results by. Must be: customerName, mailboxid, modifiedAt, number, score, status, subject
 | sortOrder| Select     | Must be: ASC, DESC
 
 ## HelpDesk.searchCustomers

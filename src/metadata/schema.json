@@ -4936,10 +4936,11 @@
           "type": "Select",
           "options": [
             "number",
-            "modifiedAt",
-            "rating"
+            "repliesSent",
+            "responseTime",
+            "resolveTime"
           ],
-          "info": "Field which to sort results by. Must be: number, modifiedAt, rating",
+          "info": "Field which to sort results by. Must be: number, repliesSent, responseTime, resolveTime",
           "required": false
         },
         {
@@ -5850,7 +5851,7 @@
     },
     {
       "name": "searchConversations",
-      "description": "The user ratings report provides a user's ratings for over a specified time range.",
+      "description": "Search conversations",
       "args": [
         {
           "name": "apiKey",
@@ -5880,19 +5881,23 @@
           "name": "sortField",
           "type": "Select",
           "options": [
-            "number",
+            "customerName",
+            "mailboxid",
             "modifiedAt",
-            "rating"
+            "number",
+            "score",
+            "status",
+            "subject"
           ],
-          "info": "Field which to sort results by. Must be: number, modifiedAt, rating",
+          "info": "Field which to sort results by. Must be: customerName, mailboxid, modifiedAt, number, score, status, subject",
           "required": false
         },
         {
           "name": "sortOrder",
           "type": "Select",
           "options": [
-            "ASC",
-            "DESC"
+            "asc",
+            "desc"
           ],
           "info": "Must be: ASC, DESC",
           "required": false
@@ -6112,7 +6117,7 @@
           "name": "teamId",
           "type": "String",
           "info": "Unique team id",
-          "required": false
+          "required": true
         }
       ],
       "vendorRequest": {
@@ -6148,7 +6153,7 @@
           "name": "teamId",
           "type": "String",
           "info": "Unique team id",
-          "required": false
+          "required": true
         }
       ],
       "vendorRequest": {
@@ -6239,7 +6244,7 @@
           "name": "userId",
           "type": "String",
           "info": "Unique user id",
-          "required": false
+          "required": true
         }
       ],
       "vendorRequest": {
