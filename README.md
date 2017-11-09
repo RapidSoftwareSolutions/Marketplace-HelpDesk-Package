@@ -143,15 +143,6 @@ Update conversation thread
 | thread        | JSON       | The body of the request.[Read more](https://developer.helpscout.com/help-desk-api/objects/thread/)
 | reload        | Select     | Set this request parameter to true to return the created conversation in the response.
 
-## HelpDesk.getThreadSource
-Return the raw email source just as it was received by Help Scout.
-
-| Field         | Type       | Description
-|---------------|------------|----------
-| apiKey        | credentials| Your API key
-| conversationId| String     | Unique conversation id.
-| threadId      | String     | Unique thread id.
-
 ## HelpDesk.deleteConversation
 Delete conversation
 

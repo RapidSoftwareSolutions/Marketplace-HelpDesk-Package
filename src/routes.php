@@ -11,7 +11,6 @@ $routes = [
     'updateConversation',
     'createConversationThread',
     'updateConversationThread',
-    'getThreadSource',
     'deleteConversation',
     'deleteNote',
     'createAttachment',

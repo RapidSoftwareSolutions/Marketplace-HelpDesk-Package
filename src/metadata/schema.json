@@ -792,48 +792,6 @@
       ]
     },
     {
-      "name": "getThreadSource",
-      "description": "Return the raw email source just as it was received by Help Scout.",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Your API key",
-          "required": true
-        },
-        {
-          "name": "conversationId",
-          "type": "String",
-          "info": "Unique conversation id.",
-          "required": true
-        },
-        {
-          "name": "threadId",
-          "type": "String",
-          "info": "Unique thread id.",
-          "required": true
-        }
-      ],
-      "vendorRequest": {
-        "url": "https://api.helpscout.net/v1/conversations/{$data['conversationId']}/thread-source/{$data['threadId']}.json",
-        "auth": {
-          "username": "{$data['apiKey']}",
-          "password": "X"
-        },
-        "method": "get"
-      },
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
       "name": "deleteConversation",
       "description": "Delete conversation",
       "args": [
